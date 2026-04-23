@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:enterprise.accredian.com)",
+      "Bash(npx create-next-app@latest . --app --typescript --tailwind --src-dir --import-alias \"@/*\")",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(taskkill *)",
+      "Bash(Get-Process -Id 2140)",
+      "Bash(Stop-Process -Force)",
+      "Bash(kill 2140 *)",
+      "Bash(powershell.exe \"Stop-Process -Id 2140 -Force\")",
+      "Bash(start *)"
+    ]
+  }
+}
