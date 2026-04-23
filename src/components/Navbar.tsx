@@ -112,7 +112,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 glass border-t border-white/10 shadow-2xl">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-slate-900/95 backdrop-blur-xl border-t border-white/10 shadow-2xl">
           <div className="flex flex-col p-6 gap-3">
             {navLinks.map((link) => (
               <Link
