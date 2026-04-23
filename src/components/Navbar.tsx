@@ -79,14 +79,18 @@ const Navbar = () => {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden flex items-center justify-center w-10 h-10 glass rounded-xl border border-white/20"
+          type="button"
+          className="md:hidden flex items-center justify-center w-12 h-12 glass rounded-xl border border-white/20 relative z-50 hover:bg-white/10 transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={isMobileMenuOpen}
         >
           <svg
-            className="w-5 h-5 text-white"
+            className="w-6 h-6 text-white"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             {isMobileMenuOpen ? (
               <path
@@ -112,14 +116,14 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-slate-900/95 backdrop-blur-xl border-t border-white/10 shadow-2xl">
+        <div className="md:hidden fixed top-[72px] left-0 right-0 bg-slate-900/98 backdrop-blur-md border-t border-white/20 shadow-2xl z-40">
           <div className="flex flex-col p-6 gap-3">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-slate-300 hover:text-white font-medium text-base py-3 px-4 rounded-xl hover:bg-white/5 transition-all"
+                className="text-white hover:text-indigo-400 font-medium text-base py-3 px-4 rounded-xl hover:bg-white/10 transition-all"
               >
                 {link.name}
               </Link>
@@ -130,7 +134,7 @@ const Navbar = () => {
                 setIsMobileMenuOpen(false);
                 setIsAuthModalOpen(true);
               }}
-              className="text-slate-300 hover:text-white font-medium text-base py-3 px-4 text-left"
+              className="text-white hover:text-indigo-400 font-medium text-base py-3 px-4 text-left"
             >
               Login
             </button>
@@ -139,7 +143,7 @@ const Navbar = () => {
                 setIsMobileMenuOpen(false);
                 setIsAuthModalOpen(true);
               }}
-              className="btn-gradient text-base py-3 px-5 text-center mt-2"
+              className="btn-gradient text-base py-3 px-5 text-center mt-2 w-full"
             >
               <span>Get Started</span>
             </button>

@@ -10,7 +10,11 @@
       "Bash(Stop-Process -Force)",
       "Bash(kill 2140 *)",
       "Bash(powershell.exe \"Stop-Process -Id 2140 -Force\")",
-      "Bash(start *)"
+      "Bash(start *)",
+      "Bash(cmd.exe *)",
+      "Bash(netstat -ano)",
+      "Bash(findstr :3000)",
+      "Bash(powershell *)"
     ]
   }
 }
